@@ -49,8 +49,7 @@ export const createOAuth2Client = (queryConfig?: Record<string, any>) => {
 
     const oauth2Client = new OAuth2Client({
       clientId: credentials?.clientId,
-      clientSecret: credentials?.clientSecret,
-      redirectUri: `http://localhost:${AUTH_SERVER_PORT}/oauth2callback`
+      clientSecret: credentials?.clientSecret
     })
 
     if (credentials?.refreshToken) oauth2Client.setCredentials({ refresh_token: credentials.refreshToken })

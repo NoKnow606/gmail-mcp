@@ -2,7 +2,7 @@
 
 import { McpServer } from "@modelcontextprotocol/sdk/server/mcp.js"
 import { StdioServerTransport } from "@modelcontextprotocol/sdk/server/stdio.js"
-import { createStatelessServer } from "@smithery/sdk/server/stateless.js"
+// import { createStatelessServer } from "@smithery/sdk/server/stateless.js"
 import { z } from "zod"
 import { google, gmail_v1 } from 'googleapis'
 import fs from "fs"
@@ -1320,10 +1320,9 @@ const main = async () => {
   const stdioServer = createServer({})
   const transport = new StdioServerTransport()
   await stdioServer.connect(transport)
-
-  // Streamable HTTP Server
-  const { app } = createStatelessServer(createServer)
-  app.listen(PORT)
+  // // Streamable HTTP Server
+  // const { app } = createStatelessServer(createServer)
+  // app.listen(PORT)
 }
 
 main()
