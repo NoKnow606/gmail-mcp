@@ -219,7 +219,7 @@ const constructRawMessage = async (gmail: gmail_v1.Gmail, params: NewMessage) =>
   return Buffer.from(message.join('\r\n')).toString('base64url').replace(/\+/g, '-').replace(/\//g, '_').replace(/=+$/, '')
 }
 
-const config = null
+const config = undefined
 
 const server = new McpServer({
   name: "Gmail-MCP",
