@@ -547,6 +547,7 @@ server.tool("get_message",
     includeBodyHtml: z.boolean().optional().describe("Whether to include the parsed HTML in the return for each body, excluded by default because they can be excessively large")
   },
   async (params) => {
+    console.error("get message", JSON.stringify(params))
     return handleTool(config, async (gmail: gmail_v1.Gmail) => {
       const { data } = await gmail.users.messages.get({ userId: 'me', id: params.id, format: 'full' })
 
